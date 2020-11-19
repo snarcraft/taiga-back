@@ -162,6 +162,10 @@ class UserStory(OCCModelMixin, WatchedModelMixin, BlockedMixin, TaggedMixin, Due
         if not self._importing or not self.modified_date:
             self.modified_date = timezone.now()
 
+        # TODO: Miryam
+        # if not self.swimlane:
+        #    self.status = self.project.default_swimlane
+
         if not self.status:
             self.status = self.project.default_us_status
 
